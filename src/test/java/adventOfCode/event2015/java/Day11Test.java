@@ -2,8 +2,8 @@ package adventOfCode.event2015.java;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,55 +39,26 @@ public class Day11Test {
     }
 
     private String passwordGenerator(String oldPassword) {
-        byte[] newPassword = oldPassword.getBytes();
+        byte[] newPassword = incrementCharacter(oldPassword.length()-1, oldPassword.getBytes());
 
-        for (int i = newPassword.length - 1; i >= 0; i--) {
-            newPassword = incrementCharacter(i, newPassword);
-            System.out.println(new String(newPassword));
-            Scanner myObj = new Scanner(System.in);
 
-            // has two pairs
-            boolean hasTwoPairs = checkHasTwoPairs(newPassword);
-
-            // has three in a row
-            boolean hasThreeInARow = checkHasThreeInARow(newPassword);
-
-            // has not IOL
-            boolean hasNotIOL = checkHasNotIOL(newPassword);
-
-            if (hasTwoPairs && hasThreeInARow && hasNotIOL) {
-                break;
-            } else if (i == 0) {
-                i = newPassword.length - 1;
-            }
-        }
 
         return new String(newPassword);
     }
 
     private boolean checkHasTwoPairs(byte[] password) {
-        boolean hasTwoPairs = false;
-        for (int i = 0; i < password.length - 3; i++) {
-            if (password[i] == password[i + 1]) {
-                for (int j = i + 2; j < password.length - 1; j++) {
-                    if (password[j] == password[j + 1]) {
-                        hasTwoPairs = true;
-                    }
-                }
-            }
-        }
-        return hasTwoPairs;
+        return true;
     }
 
     private boolean checkHasThreeInARow(byte[] password) {
-        return false;
+        return true;
     }
 
     private boolean checkHasNotIOL(byte[] password) {
-        return false;
+        return true;
     }
 
-    private byte[] incrementCharacter(int letterPosition, byte[] byteArray) {
+    public byte[] incrementCharacter(int letterPosition, byte[] byteArray) {
         byte[] newByteArray = byteArray;
 
         int i = letterPosition;
@@ -112,6 +83,34 @@ public class Day11Test {
         }
 
         return newByteArray;
+    }
+
+    @Test
+    public void testIncrementPassword() {
+        // Given
+        String pwd1 = "aaaz";
+        String pwd2 = "zzzz";
+        String pwd3 = "zzaz";
+        String pwd4 = "abc";
+
+        // When
+        byte[] result1 = incrementCharacter(3, pwd1.getBytes());
+        byte[] result2 = incrementCharacter(3, pwd2.getBytes());
+        byte[] result3 = incrementCharacter(3, pwd3.getBytes());
+        byte[] result4 = incrementCharacter(2, pwd4.getBytes());
+
+        // Then
+        Assert.assertEquals("aaba", new String(result1));
+        Assert.assertEquals("aaaaa", new String(result2));
+        Assert.assertEquals("zzba", new String(result3));
+        Assert.assertEquals("abd", new String(result4));
+
+        Assert.assertEquals("abd", passwordGenerator(pwd4));
+    }
+
+    @Test
+    public void testSequential() {
+
     }
 
 }
