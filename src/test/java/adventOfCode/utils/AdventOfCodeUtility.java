@@ -37,4 +37,14 @@ public class AdventOfCodeUtility {
         return bytes;
     }
 
+    public static Integer[] getArrayOfIntegersFromStringArrays(String[] strings) {
+        Integer[] integers = new Integer[strings.length];
+
+        for (int i = 0; i < strings.length; i++) {
+            integers[i] = Integer.parseInt(strings[i]);
+        }
+
+        return integers;
+    }
+
 }
