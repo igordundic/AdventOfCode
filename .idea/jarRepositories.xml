@@ -7,6 +7,11 @@
       <option name="url" value="http://192.168.10.100/nexus/content/groups/dev" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="oc2" />
       <option name="name" value="oc2" />
       <option name="url" value="https://pkgs.dev.azure.com/assentis/OC2/_packaging/oc2/maven/v1" />
