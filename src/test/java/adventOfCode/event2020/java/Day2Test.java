@@ -1,9 +1,8 @@
 package adventOfCode.event2020.java;
 
+import adventOfCode.utils.AdventOfCodeUtility;
 import org.junit.Before;
 import org.junit.Test;
-
-import adventOfCode.utils.AdventOfCodeUtility;
 
 public class Day2Test {
 

@@ -1,7 +1,6 @@
 package adventOfCode.event2020.java;
 
 import adventOfCode.utils.AdventOfCodeUtility;
-import com.sun.xml.internal.fastinfoset.util.CharArray;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
