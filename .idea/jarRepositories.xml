@@ -12,6 +12,21 @@
       <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="http://svn.assentis.info/nexus/content/groups/dev" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="dummy-01" />
+      <option name="name" value="dummy-01" />
+      <option name="url" value="http://svn.assentis.info/nexus/content/groups/dev" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus-external" />
+      <option name="name" value="nexus-external" />
+      <option name="url" value="http://chne11.assentis.info:8081/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="oc2" />
       <option name="name" value="oc2" />
       <option name="url" value="https://pkgs.dev.azure.com/assentis/OC2/_packaging/oc2/maven/v1" />

@@ -41,6 +41,18 @@
             <artifactId>commons-codec</artifactId>
             <version>1.14</version>
         </dependency>
+        <dependency>
+            <groupId>com.adventofcode</groupId>
+            <artifactId>AdventOfCode</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>
